@@ -1,3 +1,4 @@
+//= require_self
 window.shower = (function(window, document, undefined) {
 	var shower = {},
 		url = window.location,
