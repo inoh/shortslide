@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe Slide do
+  fixtures :slides, :sections
+
   before do
     @slide = Slide.new
   end
@@ -19,7 +21,15 @@ describe Slide do
     }.should change(Slide, :count).by(1)
   end
 
-  it "スライドが削除されること"
+  it "スライドが削除されること" do
+    lambda {
+      slides(:success).destroy
+    }.should change(Slide, :count).by(-1)
+  end
 
-  it "セッションが削除されること"
+  it "セクションが削除されること" do
+    lambda {
+      slides(:success).destroy
+    }.should change(Section, :count).by(-1)
+  end
 end

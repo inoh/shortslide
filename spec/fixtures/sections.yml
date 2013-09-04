@@ -1,0 +1,5 @@
+success:
+  id: 1
+  template_id: 1
+  slide_id: 1
+  params: "{id: 1, title: 'test title', body: 'test body'}"

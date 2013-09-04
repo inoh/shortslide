@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe Section do
+  fixtures :slides, :sections, :templates
+
   before do
     @section = Section.new
   end
@@ -17,9 +19,11 @@ describe Section do
     @section.should have(1).errors_on(:params)
   end
 
-  it "スライドが作成されること"
-
-  it "セッションが作成されること"
+  it "セッションが作成されること" do
+    lambda {
+      Section.create!(template_id: templates(:success).id, slide_id: slides(:success).id, params: "{test: 'test'}")
+    }.should change(Section, :count).by(1)
+  end
 
   it "セッションが削除されること"
 end

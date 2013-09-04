@@ -1,0 +1,7 @@
+success:
+  id: 1
+  content: >
+  <section id="{{ id }}" class="slide"><div>
+    <h2>{{ title }}</h2>
+    <p>{{ body }}</p>
+  </div></section>
