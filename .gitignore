@@ -18,3 +18,5 @@
 /public/assets
 
 /db/schema.rb
+
+.DS_Store
