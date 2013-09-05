@@ -1,3 +1,4 @@
+//= require slides
 window.shower = (function(window, document, undefined) {
 	var shower = {},
 		url = window.location,
