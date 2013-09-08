@@ -1,0 +1,29 @@
+<script id="normal_template" type="text/template">
+<section id="{{ id }}" class="slide"><div>
+  <h2>{{ title }}</h2>
+  <p>{{ body }}</p>
+</div></section>
+</script>
+
+<script id="shout_template" type="text/template">
+<section id="{{ id }}" class="slide shout"><div>
+  <h2>{{ title }}</h2>
+</div></section>
+</script>
+
+<script type="text/javascript">
+(function () {
+
+var normal = _.template($("#normal_template").html());
+$([{id: 1, title: "title1", body: "body1"}, {id: 2, title: "title2", body: "body2"}]).each(function () {
+  $("body").append(normal(this));
+});
+var shout = _.template($("#shout_template").html());
+$({id: 3, title: "shout!!"}).each(function () {
+  $("body").append(shout(this));
+});
+
+})();
+</script>
+
+<%= javascript_include_tag 'shower' %>

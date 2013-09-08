@@ -1,8 +1,10 @@
 Shortslide::Application.routes.draw do
 
-  resources :templates
-
   resources :slides
+
+  resources :templates do
+    resources :template_attributes
+  end
 
   root 'welcome#index'
 

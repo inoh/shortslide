@@ -5,7 +5,9 @@ var
     // スライド
     Slide,
     // スライドページ
-    Section;
+    Section,
+    // スライド画面
+    SlideView;
 
 Slide = Backbone.Model.extend({
   urlRoot: '/slides',
@@ -40,5 +42,18 @@ Section = Backbone.Model.extend({
     }
   }
 });
+
+Sections = Backbone.Collection.extend({
+
+  model: Section
+
+});
+
+SectionView = Backbone.View.extend({
+
+  tagName: 'section'
+
+});
+
 
 })(this);
