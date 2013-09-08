@@ -1,5 +1,6 @@
 Shortslide::Application.routes.draw do
 
+  get "welcome/index"
   resources :slides
 
   resources :templates do

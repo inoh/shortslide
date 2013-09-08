@@ -24,9 +24,6 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
-
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
@@ -55,3 +52,16 @@ end
 
 gem 'rspec'
 gem 'rspec-rails'
+
+# Bootstrap
+gem 'therubyracer', platforms: :ruby
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+gem 'less-rails-bootstrap'
+
+# Bootstrap
+=begin
+gem 'libv8', '~> 3.11.8'
+gem 'twitter-bootstrap-rails'
+gem 'less-rails-bootstrap'
+gem 'therubyracer'
+=end

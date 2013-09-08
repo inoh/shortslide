@@ -21,5 +21,6 @@ module Shortslide
     # config.i18n.default_locale = :de
     
     config.assets.precompile += [ 'shower.js', 'shower-print.css', 'shower-screen.css' ]
+    config.assets.initialize_on_precompile = false
   end
 end
