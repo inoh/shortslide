@@ -1,5 +1,5 @@
 module BootstrapFlashHelper
-  ALERT_TYPES = [:error, :info, :success, :warning]
+  # ALERT_TYPES = [:error, :info, :success, :warning]
 
   def bootstrap_flash
     flash_messages = []
@@ -9,7 +9,7 @@ module BootstrapFlashHelper
       
       type = :success if type == :notice
       type = :error   if type == :alert
-      next unless ALERT_TYPES.include?(type)
+      next unless [:error, :info, :success, :warning].include?(type)
 
       Array(message).each do |msg|
         text = content_tag(:div,

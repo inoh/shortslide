@@ -1,3 +1,4 @@
+# coding: utf-8
 require 'spec_helper'
 
 describe Slide do
@@ -11,7 +12,7 @@ describe Slide do
     @slide.should_not be_valid
   end
 
-  it "titleが入力されていること" do
+  it "タイトルが入力されていること" do
     @slide.should have(1).errors_on(:title)
   end
 
