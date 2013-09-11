@@ -24,6 +24,4 @@ describe Section do
       Section.create!(template_id: templates(:success).id, slide_id: slides(:success).id, params: "{test: 'test'}")
     }.should change(Section, :count).by(1)
   end
-
-  it "セッションが削除されること"
 end
