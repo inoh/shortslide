@@ -22,5 +22,7 @@ module Shortslide
     
     config.assets.precompile += [ 'shower.js', 'shower-print.css', 'shower-screen.css' ]
     config.assets.initialize_on_precompile = false
+
+    config.action_view.field_error_proc = proc { |html_tag, instance| html_tag }
   end
 end

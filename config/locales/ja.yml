@@ -211,5 +211,5 @@ ja:
         slide_id: スライド
         params: パラメタ
       template:
-        name: 名前
+        name: テンプレート名
         content: 内容

@@ -1,6 +1,9 @@
-<h1>Editing template</h1>
+<ol class="breadcrumb">
+  <li><%= link_to 'HOME', root_path %></li>
+  <li><%= link_to '一覧', templates_path %></li>
+  <li class="active">テンプレート修正</li>
+</ol>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @template %> |
-<%= link_to 'Back', templates_path %>
+<%= link_to 'Show', @template %>

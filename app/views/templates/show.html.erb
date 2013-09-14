@@ -1,4 +1,8 @@
-<p id="notice"><%= notice %></p>
+<ol class="breadcrumb">
+  <li><%= link_to 'HOME', root_path %></li>
+  <li><%= link_to '一覧', templates_path %></li>
+  <li class="active">テンプレート確認</li>
+</ol>
 
 <p>
   <strong>Name:</strong>
@@ -7,8 +11,16 @@
 
 <p>
   <strong>Content:</strong>
-  <%= @template.content %>
+  <pre><%= @template.content %></pre>
 </p>
 
-<%= link_to 'Edit', edit_template_path(@template) %> |
-<%= link_to 'Back', templates_path %>
+<p>
+  <strong>Params:</strong>
+  <ul>
+    <% @template.params.each do |param| %>
+    <li><%= param %></li>
+    <% end %>
+  </ul>
+</p>
+
+<%= link_to 'Edit', edit_template_path(@template) %>
