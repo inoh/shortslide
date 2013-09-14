@@ -12,6 +12,13 @@ class TemplatesController < ApplicationController
   def show
   end
 
+  # GET /templates/1/preview
+  def preview
+    @template = Template.find(params[:template_id])
+
+    render action: 'preview', location: @template, layout: 'slides'
+  end
+
   # GET /templates/new
   def new
     @template = Template.new

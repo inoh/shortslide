@@ -1,12 +1,15 @@
+# coding: utf-8
 Shortslide::Application.routes.draw do
 
-  get "welcome/index"
-  resources :slides
-
+  # テンプレート
   resources :templates do
-    resources :template_attributes
+    get 'preview'
   end
 
+  # スライド
+  resources :slides
+
+  get "welcome/index"
   root 'welcome#index'
 
 end
