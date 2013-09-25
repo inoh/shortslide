@@ -2,7 +2,7 @@
 require 'spec_helper'
 
 describe Slide do
-  fixtures :slides, :sections
+  fixtures :slides, :pages
 
   before do
     @slide = Slide.new
@@ -20,5 +20,9 @@ describe Slide do
     lambda {
       Slide.create!(title: "テストタイトル")
     }.should change(Slide, :count).by(1)
+  end
+
+  it "ページ一覧が取得出来ること" do
+    slides(:success).pages.should == [pages(:success)]
   end
 end

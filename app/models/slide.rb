@@ -1,5 +1,5 @@
 class Slide < ActiveRecord::Base
-  has_many :section, :dependent => :destroy
+  has_many :pages, :dependent => :destroy
 
   validates :title, :presence => true
 end
