@@ -21,16 +21,4 @@ describe Slide do
       Slide.create!(title: "テストタイトル")
     }.should change(Slide, :count).by(1)
   end
-
-  it "スライドが削除されること" do
-    lambda {
-      slides(:success).destroy
-    }.should change(Slide, :count).by(-1)
-  end
-
-  it "セクションが削除されること" do
-    lambda {
-      slides(:success).destroy
-    }.should change(Section, :count).by(-1)
-  end
 end

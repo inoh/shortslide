@@ -16,7 +16,7 @@ class TemplatesController < ApplicationController
   def preview
     @template = Template.find(params[:template_id])
 
-    render action: 'preview', location: @template, layout: 'slides'
+    render action: 'preview', location: @template, layout: 'shower'
   end
 
   # GET /templates/new
