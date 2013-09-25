@@ -202,14 +202,13 @@ ja:
     attributes:
       models:
         slide: スライド
-        section: セクション
+        page: ページ
         template: テンプレート
       slide:
         title: タイトル
-      section:
-        template_id: テンプレート
+      page:
         slide_id: スライド
-        params: パラメタ
+        content: 内容
       template:
         name: テンプレート名
         content: 内容
