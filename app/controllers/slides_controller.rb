@@ -30,6 +30,12 @@ class SlidesController < ApplicationController
     end
   end
 
+  def preview
+    @slide = Slide.find(params[:slide_id])
+
+    render layout: 'shower'
+  end
+
   private
     def set_slide
       @slide = Slide.find(params[:id])

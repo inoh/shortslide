@@ -7,7 +7,7 @@ Shortslide::Application.routes.draw do
   end
 
   # スライド
-  resources :slides, :only => [:index, :new, :create] do
+  resources :slides, :only => [:new, :create] do
     get 'preview'
     resources :pages, :only => [:index, :new, :create]
   end
