@@ -6,11 +6,11 @@
     <%= link_to '新しいページ', new_slide_page_path(@slide), :class => 'btn btn-primary' %>
     <ul class="nav nav-pills nav-stacked">
       <% @pages.each_with_index do |page, index| %>
-        <li><a herf="#"><%= index + 1 %></a></li>
+        <li><a href="<%= slide_preview_path(slide_id: @slide.id) %>?full#<%= page.id %>" target="preview"><%= index + 1 %></a></li>
       <% end %>
     </ul>
   </div>
   <div class="col-xs-9">
-    <iframe width="100%" height="450px" src="<%= slide_preview_path(slide_id: @slide.id) %>?full#1"></iframe>
+    <iframe name="preview" width="100%" height="450px" src="<%= slide_preview_path(slide_id: @slide.id) %>?full#1"></iframe>
   </div>
 </div>
