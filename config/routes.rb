@@ -7,12 +7,10 @@ Shortslide::Application.routes.draw do
   end
 
   # スライド
-  resources :slides, :only => [:new, :create] do
-    get 'preview'
-    resources :pages, :only => [:index, :new, :create]
+  resources :slides do
+    resources :pages, :only => [:index, :new, :create, :edit, :update, :destroy]
   end
 
-  get "welcome/index"
-  root 'welcome#index'
+  root 'slides#index'
 
 end

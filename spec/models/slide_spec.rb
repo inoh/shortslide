@@ -22,6 +22,18 @@ describe Slide do
     }.should change(Slide, :count).by(1)
   end
 
+  it "スライドが削除されること" do
+    lambda {
+      Slide.first.destroy!      
+    }.should change(Slide, :count).by(-1)
+  end
+
+  it "ページが削除されること" do
+    lambda {
+      Slide.first.destroy!      
+    }.should change(Page, :count).by(-1)
+  end
+
   it "ページ一覧が取得出来ること" do
     slides(:success).pages.should == [pages(:success)]
   end

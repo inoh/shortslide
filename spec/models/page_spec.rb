@@ -25,4 +25,10 @@ describe Page do
     }.should change(Page, :count).by(1)
   end
 
+  it "ページが削除されること" do
+    lambda {
+      Page.first.destroy!
+    }.should change(Page, :count).by(-1)
+  end
+
 end
