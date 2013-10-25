@@ -11,6 +11,8 @@ Shortslide::Application.routes.draw do
     resources :pages, :only => [:index, :new, :create, :edit, :update, :destroy]
   end
 
+  resources :images, :only => [:index, :create, :destroy]
+
   root 'slides#index'
 
 end

@@ -1,0 +1,23 @@
+<div class="row">
+  <h1>画像一覧</h1>
+  <%= form_for @image, :url => images_path, :html => { :multipart => true,  :class => "form-inline" } do |f| %>
+    <div class="form-group">
+      <label class="sr-only" for="exampleInputEmail2">Email address</label>
+      <%= f.file_field :file, :class => "form-control", :placeholder => "Picture" %>
+    </div>
+    <%= f.submit 'アップロード', :class => "btn btn-default" %>
+  <% end %>
+</div>
+<div class="row">
+  <hr>
+  <% @images.each do |image| %>
+    <div class="col-xs-2">
+      <a href="<%= image.file.url %>">
+        <%= image_tag image.file.url(:medium), :class => "img-thumbnail" %>
+      </a>
+      <p>
+        <%= link_to '削除', image, method: :delete, data: { confirm: '削除してもよろしいですか？' }, :class => 'btn btn-danger' %>
+      </p>
+    </div>
+  <% end %>
+</div>

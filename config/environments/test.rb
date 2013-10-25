@@ -33,4 +33,7 @@ Shortslide::Application.configure do
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
+
+  # paperclip
+  config.paperclip_defaults = {:path => "#{Rails.root}/public/system/test/:class/:id/:style/:basename.:extension"}
 end

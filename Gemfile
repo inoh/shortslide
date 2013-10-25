@@ -55,13 +55,7 @@ gem 'rspec-rails'
 
 # Bootstrap
 gem 'therubyracer', platforms: :ruby
-gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
-gem 'less-rails-bootstrap'
+# gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+# gem 'less-rails-bootstrap'
 
-# Bootstrap
-=begin
-gem 'libv8', '~> 3.11.8'
-gem 'twitter-bootstrap-rails'
-gem 'less-rails-bootstrap'
-gem 'therubyracer'
-=end
+gem "paperclip", "~> 3.0"

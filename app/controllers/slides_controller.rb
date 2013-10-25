@@ -24,7 +24,7 @@ class SlidesController < ApplicationController
 
     respond_to do |format|
       if @slide.save
-        format.html { redirect_to slide_pages_url(@slide), notice: 'slide was successfully created.' }
+        format.html { redirect_to slide_pages_url(@slide) }
         format.json { render action: 'show', status: :created, location: @slide }
       else
         format.html { render action: 'new' }
