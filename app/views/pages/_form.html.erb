@@ -37,11 +37,7 @@
       </div>
       <div class="modal-footer">
         <div class="col-xs-12">
-<<<<<<< HEAD
-          <button type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
-=======
           <button id="modal-close" type="button" class="btn btn-default" data-dismiss="modal">閉じる</button>
->>>>>>> issue19
         </div>
       </div>
     </div><!-- /.modal-content -->
@@ -54,53 +50,5 @@
   </a>
 </div>
 </script>
-<<<<<<< HEAD
-<script type="text/javascript">
-(function (window) {
-
-var Image = Backbone.Model.extend({
-});
-
-var Images = Backbone.Collection.extend({
-  model: Image,
-  url: '/images'
-});
-
-var ImageView = Backbone.View.extend({
-  template: _.template($("#image-template").text()),
-  events: {
-    'click a': 'onClick'
-  },
-  onClick: function (e) {
-    e.preventDefault();
-    $("#page_content").val($('#page_content').val() + '<img src="' + this.model.get('medium') + '"></img>');
-  },
-  render: function () {
-    this.$el.html(this.template(this.model.attributes));
-    return this;
-  }
-});
-var ImagesView = Backbone.View.extend({
-  el: "#images"
-});
-
-var images = new Images();
-var imagesView = new ImagesView();
-images.fetch({
-  success: function () {
-    images.each(function (image) {
-      var imageView = new ImageView({model: image});
-      imagesView.$el.append(imageView.render().el);
-//      console.log(imageView.render().el);
-    });
-  }
-});
-
-
-
-})(this);
-</script>
-=======
 
 <%= javascript_include_tag "slides", "data-turbolinks-track" => true %>
->>>>>>> issue19

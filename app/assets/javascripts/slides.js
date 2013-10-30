@@ -1,63 +1,5 @@
 (function (window) {
 
-<<<<<<< HEAD
-// Model
-var 
-    // スライド
-    Slide,
-    // スライドページ
-    Section,
-    // スライド画面
-    SlideView;
-
-Slide = Backbone.Model.extend({
-  urlRoot: '/slides',
-  idAttribute: 'id',
-  defaults: {
-    title: ""
-  },
-  validate: function (attrs, options) {
-    if (_.isEmpty(attrs.title)) {
-      return "タイトルが設定されていません";
-    }
-  }
-});
-
-Section = Backbone.Model.extend({
-  urlRoot: '/sections',
-  idAttribute: 'id',
-  defaults: {
-    template_id: null,
-    slide_id: null,
-    params: ""
-  },
-  validate: function (attrs, options) {
-    if (_.isEmpty(attrs.template_id)) {
-      return "テンプレートが設定されていません";
-    }
-    if (_.isEmpty(attrs.slide_id)) {
-      return "スライドが設定されていません";
-    }
-    if (_.isEmpty(attrs.params)) {
-      return "パラメタが設定されていません";
-    }
-  }
-});
-
-Sections = Backbone.Collection.extend({
-
-  model: Section
-
-});
-
-SectionView = Backbone.View.extend({
-
-  tagName: 'section'
-
-});
-
-
-=======
 var 
     // 画像
     Image,
@@ -110,5 +52,4 @@ images.fetch({
   }
 });
 
->>>>>>> issue19
 })(this);
