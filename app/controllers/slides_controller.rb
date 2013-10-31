@@ -2,6 +2,7 @@
 
 class SlidesController < ApplicationController
   before_action :set_slide, only: [:show, :edit, :update, :destroy]
+  skip_filter :authentication, :only => [:show]
 
   # GET /slides
   def index

@@ -59,3 +59,7 @@ gem 'therubyracer', platforms: :ruby
 # gem 'less-rails-bootstrap'
 
 gem "paperclip", "~> 3.0"
+
+gem 'omniauth'
+gem 'omniauth-facebook'
+

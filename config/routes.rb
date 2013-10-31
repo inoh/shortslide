@@ -11,8 +11,17 @@ Shortslide::Application.routes.draw do
     resources :pages, :only => [:index, :new, :create, :edit, :update, :destroy]
   end
 
+  # 画像管理
   resources :images, :only => [:index, :create, :destroy]
 
-  root 'slides#index'
+  # 認証
+  get "/sessions" => "sessions#index"
+  get "/auth/:provider/callback" => "sessions#create"
+  get "/signout" => "sessions#destroy"
+
+  # トップページ
+  get "/welcome" => "welcome#index"
+
+  root 'welcome#index'
 
 end
