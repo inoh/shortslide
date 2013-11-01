@@ -1,0 +1,29 @@
+<h1>スライドの一覧</h1>
+<hr>
+<% if session[:user_id] %>
+  <div class="col-xs-4">
+    <%= link_to '新しいスライド', new_slide_path, :class => 'btn btn-primary' %>
+  </div>
+  <div class="col-xs-8">
+    <div class="row">
+      <% slides.each do |slide| %>
+      <div class="col-xs-6">
+        <%= render :partial => 'slides/page', :locals => { :slide => slide } %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+<% else %>
+  <div class="col-xs-12">
+    <div class="row">
+      <% slides.each do |slide| %>
+      <div class="col-xs-4">
+        <%= render :partial => 'slides/page', :locals => { :slide => slide } %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+
+
+

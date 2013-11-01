@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   private
     def authentication
       unless current_user
-        redirect_to sessions_url
+        redirect_to root_url
       end
     end
 
