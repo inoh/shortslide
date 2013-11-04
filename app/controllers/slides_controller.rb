@@ -1,8 +1,8 @@
 # coding: utf-8
 
 class SlidesController < ApplicationController
-  before_action :set_slide, only: [:show, :edit, :update, :destroy]
-  skip_filter :authentication, :only => [:show]
+  before_action :set_slide, only: [:show, :share, :edit, :update, :destroy]
+  skip_filter :authentication, :only => [:show, :share]
 
   # GET /slides
   def index

@@ -9,6 +9,7 @@ Shortslide::Application.routes.draw do
   # スライド
   resources :slides do
     resources :pages, :only => [:index, :new, :create, :edit, :update, :destroy]
+    resource :controls, :only => [:show, :create]
   end
 
   # 画像管理

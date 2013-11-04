@@ -16,6 +16,7 @@
 //= require turbolinks
 //= require underscore-min
 //= require backbone-min
+//= require pusher
 _.templateSettings = {
   interpolate: /\{\{(.+?)\}\}/g
 };

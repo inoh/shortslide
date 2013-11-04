@@ -4,6 +4,7 @@
   <title>Shortslide</title>
   <%= stylesheet_link_tag "shower-print", media: "print" %>
   <%= stylesheet_link_tag "shower-screen", media: "all" %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body class="list">
@@ -11,6 +12,8 @@
 <%= yield %>
 
 <%= javascript_include_tag 'shower' %>
+
+<%= yield :javascript %>
 
 </body>
 </html>

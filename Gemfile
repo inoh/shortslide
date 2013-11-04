@@ -58,8 +58,12 @@ gem 'therubyracer', platforms: :ruby
 # gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 # gem 'less-rails-bootstrap'
 
+# file upload
 gem "paperclip", "~> 3.0"
 
+# OAuth
 gem 'omniauth'
 gem 'omniauth-facebook'
 
+# WebSocket
+gem 'pusher'

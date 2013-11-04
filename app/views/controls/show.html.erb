@@ -1,0 +1,31 @@
+<%= form_for [@slide, @control] do |f| %>
+  <div class="input-group">
+    <%= f.hidden_field :command, {:value => :previous} %>
+    <%= f.submit '前', :class => "btn btn-default" %>
+  </div>
+<% end %>
+<%= form_for [@slide, @control] do |f| %>
+  <div class="input-group">
+    <%= f.hidden_field :command, {:value => :next} %>
+    <%= f.submit '次', :class => "btn btn-default" %>
+  </div>
+<% end %>
+<%= form_for [@slide, @control] do |f| %>
+  <div class="input-group">
+    <%= f.hidden_field :command, {:value => :first} %>
+    <%= f.submit '最初', :class => "btn btn-default" %>
+  </div>
+<% end %>
+<%= form_for [@slide, @control] do |f| %>
+  <div class="input-group">
+    <%= f.hidden_field :command, {:value => :last} %>
+    <%= f.submit '最後', :class => "btn btn-default" %>
+  </div>
+<% end %>
+<%= form_for [@slide, @control] do |f| %>
+  <div class="input-group">
+    <%= f.hidden_field :command, {:value => :go} %>
+    <%= f.text_field :message %>
+    <%= f.submit 'ページ指定', :class => "btn btn-default" %>
+  </div>
+<% end %>
