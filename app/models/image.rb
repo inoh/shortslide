@@ -2,7 +2,7 @@ class Image < ActiveRecord::Base
   # has_attached_file :file, :styles => { :medium => "300x300>", :thumb => "100x100>" }
   has_attached_file :file,
     :storage => :s3,
-    :s3_credentials => "#{Rails.root}/config/aws.yml",
+    :s3_credentials => S3_CREDENTIALS,
     :bucket => 'shortslide',
     :styles => { :medium => "300x300>", :thumb => "100x100>" }
 
