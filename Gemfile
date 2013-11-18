@@ -68,3 +68,6 @@ gem 'omniauth-facebook'
 
 # WebSocket
 gem 'pusher'
+
+# MARKDOWN
+gem 'redcarpet'
