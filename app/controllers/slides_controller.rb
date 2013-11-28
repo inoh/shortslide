@@ -68,7 +68,7 @@ class SlidesController < ApplicationController
     end
 
     def slide_params
-      params.require(:slide).permit(:title)
+      params.require(:slide).permit(:title, :content)
     end
 
 end

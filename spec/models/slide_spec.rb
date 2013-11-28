@@ -2,7 +2,7 @@
 require 'spec_helper'
 
 describe Slide do
-  fixtures :slides, :pages
+  fixtures :slides
 
   describe "基本チェック" do
     before do
@@ -30,17 +30,17 @@ describe Slide do
         Slide.first.destroy!      
       }.should change(Slide, :count).by(-1)
     end
-
-    it "ページが削除されること" do
-      lambda {
-        Slide.first.destroy!      
-      }.should change(Page, :count).by(-1)
-    end
   end
 
   describe "関連確認" do
     it "ページ一覧が取得出来ること" do
-      slides(:success).pages.should == [pages(:success)]
+      slides(:success).pages.count.should == 2
+    end
+  end
+
+  describe "分析確認" do
+    it "タイトルが取得出来ること" do
+      slides(:success).title.should == "メインタイトル"
     end
   end
 end

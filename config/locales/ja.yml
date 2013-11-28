@@ -206,8 +206,8 @@ ja:
         template: テンプレート
       slide:
         title: タイトル
+        content: 内容
       page:
-        slide_id: スライド
         content: 内容
       template:
         name: テンプレート名
