@@ -26,8 +26,13 @@
   </div>
 
   <div class="form-group">
+    <hr class="col-sm-offset-2 col-sm-10" />
+  </div>
+
+  <div class="form-group">
     <div class="col-sm-offset-2 col-sm-4">
       <%= f.submit :class => 'btn btn-primary' %>
+      <%= link_to '表示', slide_path(@slide), :class => 'btn btn-default', :target => 'preview' %>
       <a data-toggle="modal" href="#myModal" class="btn btn-default">写真選択</a>
     </div>
   </div>
