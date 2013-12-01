@@ -6,3 +6,9 @@ success:
     内容１
     ## サブタイトル２
     内容２
+shout:
+  id: 2
+  title: シャウト
+  content: |-
+    ## シャウトタイトル
+    
