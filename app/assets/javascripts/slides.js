@@ -27,7 +27,7 @@ ImageView = Backbone.View.extend({
   },
   onClick: function (e) {
     e.preventDefault();
-    $("#page_content").val($('#page_content').val() + '<img src="' + this.model.get('medium') + '"></img>');
+    $("#slide_content").val($('#slide_content').val() + '<img src="' + this.model.get('medium') + '"></img>');
     $("#modal-close").click();
   },
   render: function () {
