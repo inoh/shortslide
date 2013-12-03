@@ -15,6 +15,12 @@ class Page
   end
 
   def class_names
-    [content.length == 1 ? "shout" : ""]
+    if content.length == 1
+      ["shout"]
+    elsif content.length == 2 && content[1] =~ /<img /
+      ["cover"]
+    else
+      []
+    end
   end
 end
