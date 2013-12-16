@@ -1,0 +1,19 @@
+<script type="text/javascript">
+var pusher = new Pusher('bf23f061cad60c87aa61');
+var channel = pusher.subscribe('slides_' + <%= @slide.id %>);
+channel.bind('next', function () {
+  shower.next();
+});
+channel.bind('previous', function () {
+  shower.previous();
+});
+channel.bind('first', function () {
+  shower.first();
+});
+channel.bind('last', function () {
+  shower.last();
+});
+channel.bind('go', function (data) {
+  shower.go(parseInt(data.message, 10)-1);
+});
+</script>

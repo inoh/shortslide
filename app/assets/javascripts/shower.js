@@ -7,7 +7,8 @@ window.shower = (function(window, document, undefined) {
 		slideList = [],
 		timer,
 		isHistoryApiSupported = !!(window.history && history.pushState),
-		l = slides.length, i;
+		l = slides.length, i,
+		isSlideLock = false;
 
 	/**
 	* Get value at named data store for the DOM element.
@@ -363,6 +364,8 @@ window.shower = (function(window, document, undefined) {
 	* @returns {undefined}
 	*/
 	shower._dispatchSingleSlideMode = function(e) {
+		if (isSlideLock) { return; }
+
 		// Process links
 		// @TODO: presentation links support
 		if ('A' === e.target.nodeName) {
@@ -448,8 +451,19 @@ window.shower = (function(window, document, undefined) {
 		return ret;
 	};
 
+	/**
+	* キーイベントからのスライド操作をロックします。
+	*/
+	shower.slideLock = function() {
+		isSlideLock = true;
+	}
 
-
+	/**
+	* キーイベントからのスライド操作のロックを解除します。
+	*/
+	shower.slideUnLock = function() {
+		isSlideLock = false;
+	}
 
 	// Event handlers
 
@@ -486,7 +500,7 @@ window.shower = (function(window, document, undefined) {
 
 	document.addEventListener('keydown', function (e) {
 		// Shortcut for alt, ctrl and meta keys
-		if (e.altKey || e.ctrlKey || e.metaKey) { return; }
+		if (e.altKey || e.ctrlKey || e.metaKey || isSlideLock) { return; }
 
 		var currentSlideNumber = shower.getCurrentSlideNumber(),
 			innerNavigationCompleted = true;
@@ -611,6 +625,8 @@ window.shower = (function(window, document, undefined) {
 	document.addEventListener('touchend', shower._dispatchSingleSlideMode, false);
 
 	document.addEventListener('touchstart', function (e) {
+		if (isSlideLock) { return; }
+
 		if ( ! shower.isListMode()) {
 			var currentSlideNumber = shower.getCurrentSlideNumber(),
 				x = e.touches[0].pageX;

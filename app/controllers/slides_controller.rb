@@ -1,8 +1,8 @@
 # coding: utf-8
 
 class SlidesController < ApplicationController
-  before_action :set_slide, only: [:show, :share, :edit, :update, :destroy]
-  skip_filter :authentication, :only => [:show, :share]
+  before_action :set_slide, only: [:show, :share, :edit, :update, :destroy, :lock]
+  skip_filter :authentication, :only => [:show, :share, :lock]
 
   # GET /slides
   def index
@@ -11,6 +11,11 @@ class SlidesController < ApplicationController
 
   # GET /slides/1
   def show
+    render layout: 'shower'
+  end
+
+  # GET /slides/1/lock
+  def lock
     render layout: 'shower'
   end
 
@@ -64,7 +69,7 @@ class SlidesController < ApplicationController
 
   private
     def set_slide
-      @slide = Slide.find(params[:id])
+      @slide = Slide.find(params[:id] || params[:slide_id])
     end
 
     def slide_params

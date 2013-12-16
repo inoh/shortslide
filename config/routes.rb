@@ -10,6 +10,7 @@ Shortslide::Application.routes.draw do
   resources :slides do
     resources :pages, :only => [:index]
     resource :controls, :only => [:show, :create]
+    get 'lock'
   end
 
   # 画像管理
