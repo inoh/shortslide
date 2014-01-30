@@ -2,9 +2,9 @@
 // Copyright © 2010–2012 Vadim Makeev, pepelsbey.net
 // Licensed under MIT license: github.com/shower/shower/wiki/MIT-License
 
-@import 'defaults';
-@import 'fonts';
-@import 'reset';
+@import 'shower-defaults';
+@import 'shower-fonts';
+@import 'shower-reset';
 
 body {
 	counter-reset:slide;
