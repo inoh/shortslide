@@ -1,5 +1,5 @@
 <script type="text/javascript">
-var pusher = new Pusher('bf23f061cad60c87aa61');
+var pusher = new Pusher('<%= ENV["PUSHER_KEY"] %>');
 var channel = pusher.subscribe('slides_' + <%= @slide.id %>);
 channel.bind('next', function () {
   shower.next();
