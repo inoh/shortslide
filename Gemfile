@@ -62,12 +62,13 @@ gem 'therubyracer', platforms: :ruby
 gem "paperclip", "~> 3.0"
 gem 'aws-sdk', '~> 1.5.7'
 
-# OAuth
-gem 'omniauth'
-gem 'omniauth-facebook'
-
 # WebSocket
 gem 'pusher'
 
 # MARKDOWN
 gem 'redcarpet'
+
+# authentication
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook'

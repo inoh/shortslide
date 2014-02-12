@@ -1,6 +1,14 @@
 # coding: utf-8
 Shortslide::Application.routes.draw do
 
+  # devise_for :users
+  devise_for :users, :path => "", :path_names => {
+    :sign_in => 'signin', :sign_out => 'signout', :password => 'password',
+    :confirmation => 'verification',
+    :unlock => 'unblock',
+    :registration => 'signup'
+  }, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+
   # テンプレート
   resources :templates do
     get 'preview'
@@ -18,12 +26,11 @@ Shortslide::Application.routes.draw do
 
   # 認証
   get "/sessions" => "sessions#index"
-  get "/auth/:provider/callback" => "sessions#create"
   get "/signout" => "sessions#destroy"
 
-  # トップページ
+  # ウェルカム
   get "/welcome" => "welcome#index"
 
-  root 'welcome#index'
+  root "welcome#index"
 
 end

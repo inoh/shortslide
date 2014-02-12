@@ -1,7 +1,11 @@
 class WelcomeController < ApplicationController
-  skip_filter :authentication
+  skip_filter :authenticate_user!
 
   def index
-    @slides = Slide.all
+    if user_signed_in?
+      redirect_to slides_url
+    else
+      @slides = Slide.all
+    end
   end
 end

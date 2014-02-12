@@ -1,5 +1,13 @@
 require 'spec_helper'
 
 describe User do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "基本チェック" do
+    before do
+      @user = User.new
+    end
+
+    it "バリデーションが失敗すること" do
+      @user.should_not be_valid
+    end
+  end
 end

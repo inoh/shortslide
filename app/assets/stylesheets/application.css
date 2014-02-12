@@ -10,6 +10,7 @@
  *
  *= require bootstrap.min
  *= require bootstrap-theme.min
+ *= require welcome
  */
 /*
  * Style twaks
@@ -59,7 +60,3 @@ footer {
     width: 50%; /* 6 columns */
   }
 }
-
-/*
- *= require welcome
- */
