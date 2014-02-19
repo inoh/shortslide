@@ -1,6 +1,6 @@
 <h1>スライドの一覧</h1>
 <hr>
-<% if session[:user_id] %>
+<% if user_signed_in? %>
   <div class="col-xs-4">
     <%= link_to '新しいスライド', new_slide_path, :class => 'btn btn-primary' %>
   </div>
