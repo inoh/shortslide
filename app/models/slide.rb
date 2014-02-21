@@ -7,7 +7,10 @@ class Slide < ActiveRecord::Base
     if content
       content.each_line do |line|
         ret << Page.new(id: ret.length + 1) if line =~ /^## /
-        ret.last.content << line.chomp unless line.chomp.empty?
+        unless line.chomp.empty?
+          ret << Page.new(id: "nbsp;") unless ret.last
+          ret.last.content << line.chomp 
+        end
       end
     end
     ret
