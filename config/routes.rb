@@ -24,10 +24,6 @@ Shortslide::Application.routes.draw do
   # 画像管理
   resources :images, :only => [:index, :create, :destroy]
 
-  # 認証
-  get "/sessions" => "sessions#index"
-  get "/signout" => "sessions#destroy"
-
   # ウェルカム
   get "/welcome" => "welcome#index"
 
