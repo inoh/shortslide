@@ -14,4 +14,11 @@
   <% end -%>
 
   <div><%= f.submit "Login", :class => "btn btn-lg btn-primary btn-block" %></div>
+
 <% end %>
+
+<form class="form-signin">
+  <%= link_to raw('<img src="/icon/glyphicons_social_30_facebook.png" width="16px"></img> Connect with Facebook'), user_omniauth_authorize_path(:facebook), :class => "btn btn-primary col-xs-12" %>
+</form>
+
+<div><%= link_to 'Signupはこちら', new_user_registration_path %></div>

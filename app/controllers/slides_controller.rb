@@ -6,7 +6,7 @@ class SlidesController < ApplicationController
 
   # GET /slides
   def index
-    @slides = Slide.all
+    @slides = current_user.slides
   end
 
   # GET /slides/1
@@ -27,6 +27,7 @@ class SlidesController < ApplicationController
   # POST /slides
   def create
     @slide = Slide.new(slide_params)
+    @slide.user_id = current_user.id
 
     respond_to do |format|
       if @slide.save

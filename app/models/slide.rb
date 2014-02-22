@@ -1,5 +1,6 @@
 # coding: utf-8
 class Slide < ActiveRecord::Base
+  belongs_to :user
   validates :title, :presence => true
 
   def pages
