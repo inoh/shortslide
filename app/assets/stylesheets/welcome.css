@@ -36,3 +36,8 @@
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+.icon-exit {
+  background-image: url(/icon/glyphicons_exit_black.png);
+  width: 100px;
+  height: 100px;
+}

@@ -1,0 +1,33 @@
+<%= form_for(@user, :url => settings_profile_path) do |f| %>
+  <% if @user.errors.any? %>
+    <div class="alert alert-danger">
+      <h2><%= pluralize(@user.errors.count, "error") %> まだ保存されていません</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :email, :class => 'control-label col-sm-2' %>
+    <div class="col-sm-10 <%= error_class(@user, :email) %>">
+      <%= f.text_field :email, :class => "form-control", :placeholder => 'メールアドレス' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :flickr_user_id, :class => 'control-label col-sm-2' %>
+    <div class="col-sm-10 <%= error_class(@user, :flickr_user_id) %>">
+      <%= f.text_field :flickr_user_id, :class => "form-control", :placeholder => 'FlickrのユーザID' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= f.submit :class => 'btn btn-primary' %>
+    </div>
+  </div>
+<% end %>
