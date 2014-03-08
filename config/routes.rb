@@ -22,6 +22,7 @@ Shortslide::Application.routes.draw do
 
   # 画像管理
   resources :images, :only => [:index, :create, :destroy]
+  get 'flickr' => 'flickr#index'
 
   get 'settings/profile' => 'profile#edit'
   patch 'settings/profile' => 'profile#update'

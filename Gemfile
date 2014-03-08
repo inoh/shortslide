@@ -66,3 +66,6 @@ gem 'redcarpet'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
+
+# flickr
+gem 'flickraw'
