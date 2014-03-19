@@ -1,5 +1,8 @@
-<h3><%= link_to slide.title, slide_path(slide) %></h3>
-<iframe width="100%" height="210px" src="<%= slide_path(slide) %>?full#1"></iframe>
+<%= link_to slide_path(slide), :class => 'thumbnail' do %>
+  <div style="height: 100px;">
+    <%= slide.title %>
+  </div>
+<% end %>
 <% if user_signed_in? %>
   <p>
     <%= link_to '編集', slide_pages_path(slide_id: slide.id), :class => 'btn btn-default' %>
