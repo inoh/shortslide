@@ -22,10 +22,12 @@
     <%= f.submit '最後', :class => "btn btn-default" %>
   </div>
 <% end %>
-<%= form_for [@slide, @control] do |f| %>
-  <div class="input-group">
-    <%= f.hidden_field :command, {:value => :go} %>
-    <%= f.text_field :message %>
-    <%= f.submit 'ページ指定', :class => "btn btn-default" %>
-  </div>
+<% @slide.pages.each do |page| %>
+  <%= form_for [@slide, @control] do |f| %>
+    <div class="input-group">
+      <%= f.hidden_field :command, {:value => :go} %>
+      <%= f.hidden_field :message, {:value => page.id} %>
+      <%= f.submit "#{page.id}. #{page.content[0]}", :class => "btn btn-default" %>
+    </div>
+  <% end %>
 <% end %>
