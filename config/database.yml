@@ -15,7 +15,7 @@ development:
   database: shortslide_development
   pool: 5
   username: postgres
-  password: test
+  password: postgres
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -27,7 +27,7 @@ test:
   database: shortslide_test
   pool: 5
   username: postgres
-  password: test
+  password: postgres
 
 production:
   adapter: mysql2

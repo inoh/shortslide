@@ -7,8 +7,10 @@ class AddRelationToUsers < ActiveRecord::Migration
       t.integer :user_id
     end
     # TODO ユーザはひとりしかいないことが前提
-    Image.update_all(user_id: User.last.id)
-    Slide.update_all(user_id: User.last.id)
+    if User.count > 0
+      Image.update_all(user_id: User.last.id)
+      Slide.update_all(user_id: User.last.id)
+    end
   end
 
   def self.down

@@ -68,4 +68,6 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 
 # flickr
-gem 'flickraw'
+gem 'flickraw', '~> 0.9.8'
+
+gem 'pry-rails', :group => :development
