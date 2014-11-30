@@ -1,33 +1,65 @@
-<%= form_for [@slide, @control] do |f| %>
-  <div class="input-group">
-    <%= f.hidden_field :command, {:value => :previous} %>
-    <%= f.submit '前', :class => "btn btn-default" %>
-  </div>
-<% end %>
-<%= form_for [@slide, @control] do |f| %>
-  <div class="input-group">
-    <%= f.hidden_field :command, {:value => :next} %>
-    <%= f.submit '次', :class => "btn btn-default" %>
-  </div>
-<% end %>
-<%= form_for [@slide, @control] do |f| %>
-  <div class="input-group">
-    <%= f.hidden_field :command, {:value => :first} %>
-    <%= f.submit '最初', :class => "btn btn-default" %>
-  </div>
-<% end %>
-<%= form_for [@slide, @control] do |f| %>
-  <div class="input-group">
-    <%= f.hidden_field :command, {:value => :last} %>
-    <%= f.submit '最後', :class => "btn btn-default" %>
-  </div>
-<% end %>
-<% @slide.pages.each do |page| %>
-  <%= form_for [@slide, @control] do |f| %>
-    <div class="input-group">
-      <%= f.hidden_field :command, {:value => :go} %>
-      <%= f.hidden_field :message, {:value => page.id} %>
-      <%= f.submit "#{page.id}. #{page.content[0]}", :class => "btn btn-default" %>
-    </div>
-  <% end %>
-<% end %>
+<script>
+$(function () {
+  // コントローラモデル
+  var Control = Backbone.Model.extend({
+    url: "controls"
+  });
+  // スライドページモデル
+  var Page = Backbone.Model.extend({
+  });
+  // コントローラモデル一覧
+  var Controls = Backbone.Collection.extend({
+    model: Control
+  });
+  // スライドページモデル一覧
+  var Pages = Backbone.Collection.extend({
+    model: Page,
+    url: "pages"
+  });
+  // ボタン
+  var ButtonView = Backbone.View.extend({
+    events: {
+      click: function (e) {
+        this.model.save();
+      }
+    },
+    template: _.template("<input type='button' value='{{- value }}' class='btn btn-default'>"),
+    render: function (options) {
+      this.$el.html(this.template(options));
+      return this;
+    }
+  });
+  // ボタン一覧
+  var ButtonsView = Backbone.View.extend({
+    el: '#buttons',
+    render: function () {
+      this.collection.each(function (model) {
+        this.append(model);
+      }, this);
+      return this;
+    },
+    append: function (model) {
+      var buttonView = new ButtonView({model: model});
+      buttonView.render({value: (model.get("message") || model.get("command"))});
+      this.$el.append(buttonView.el);
+    }
+  });
+
+  var controls = new Controls();
+  controls.add({command: "previous"});
+  controls.add({command: "next"});
+  controls.add({command: "first"});
+  controls.add({command: "last"});
+  var pages = new Pages();
+  pages.fetch({
+    success: function (collection, pages, options) {
+      _.each(pages, function (page) {
+        controls.add({command: "go", message : page.id});
+      });
+      var buttonsView = new ButtonsView({collection: controls});
+      buttonsView.render();
+    }
+  });
+});
+</script>
+<div id="buttons"></div>

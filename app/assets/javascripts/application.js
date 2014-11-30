@@ -18,5 +18,7 @@
 //= require backbone-min
 //= require pusher
 _.templateSettings = {
-  interpolate: /\{\{(.+?)\}\}/g
+  evaluate : /\{\{(.+?)\}\}/g,
+  interpolate: /\{\{=(.+?)\}\}/g,
+  escape: /\{\{-(.+?)\}\}/g
 };
