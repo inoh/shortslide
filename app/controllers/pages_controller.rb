@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   before_action :set_slide
 
-  # GET /slides
+  # GET /slides/1/pages
   def index
     @pages = @slide.pages
   end

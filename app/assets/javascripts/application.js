@@ -17,6 +17,9 @@
 //= require underscore-min
 //= require backbone-min
 //= require pusher
+//= require easeljs-0.8.0.min
+//= require tweenjs-0.6.0.min
+//= require soundjs-0.6.0.min
 _.templateSettings = {
   evaluate : /\{\{(.+?)\}\}/g,
   interpolate: /\{\{=(.+?)\}\}/g,

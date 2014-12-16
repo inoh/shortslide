@@ -10,8 +10,14 @@ class SlidesController < ApplicationController
   end
 
   # GET /slides/1
+  # GET /slides/1.js
+  # GET /slides/1.css
   def show
-    render layout: 'shower'
+    respond_to do |format|
+      format.html { render layout: 'shower' }
+      format.js { render text: @slide.script }
+      format.css { render text: @slide.style }
+    end
   end
 
   # GET /slides/1/lock
@@ -81,7 +87,7 @@ class SlidesController < ApplicationController
     end
 
     def slide_params
-      params.require(:slide).permit(:title, :content)
+      params.require(:slide).permit(:title, :content, :script, :style)
     end
 
 end

@@ -35,7 +35,9 @@ Slide = Backbone.Model.extend({
     slide: {
       id: null,
       title: "",
-      content: ""
+      content: "",
+      script: "",
+      style: ""
     }
   }
 });
@@ -96,6 +98,8 @@ SlideView = Backbone.View.extend({
     slide.get('slide')['id'] = $("#slide_id").val();
     slide.get('slide')['title'] = $("#slide_title").val();
     slide.get('slide')['content'] = $("#slide_content").val();
+    slide.get('slide')['script'] = $("#slide_script").val();
+    slide.get('slide')['style'] = $("#slide_style").val();
     slide.save(null, {
       validate: false,
       success: function () {

@@ -1,4 +1,6 @@
+<link href="<%= slide_path(@slide, format: 'css') %>" media="all" rel="stylesheet">
 <% @slide.pages.each do |page| %>
   <%= render :partial => 'pages/template', :locals => { :page => page } %>
 <% end %>
 <%= render 'control' %>
+<script src="<%= slide_path(@slide, format: 'js') %>"></script>
